@@ -1,0 +1,122 @@
+:root {
+  --rosado-pastel: #f8bbd0;
+  --rosado: #e91e63;
+  --rosado-oscuro: #ad1457;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff5f8;
+  scroll-behavior: smooth;
+}
+
+/* Topbar */
+.topbar {
+  background-color: var(--rosado-pastel);
+}
+.topbar a {
+  color: white;
+  font-size: 1.1rem;
+  margin-left: 10px;
+  transition: color 0.3s;
+}
+.topbar a:hover {
+  color: var(--rosado-oscuro);
+}
+
+/* Navbar */
+.navbar-brand {
+  color: var(--rosado);
+  font-weight: 700;
+  font-size: 1.9rem;
+}
+.navbar-brand span {
+  color: #212529;
+}
+.nav-link {
+  font-weight: 600;
+  color: #333;
+  transition: color 0.3s ease;
+}
+.nav-link.active,
+.nav-link:hover {
+  color: var(--rosado);
+  text-decoration: underline;
+}
+
+/* Botones */
+.btn-rosado {
+  background-color: var(--rosado);
+  color: white;
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+.btn-rosado:hover {
+  background-color: var(--rosado-oscuro);
+  box-shadow: 0 6px 20px rgba(173, 20, 87, 0.5);
+}
+
+/* Header */
+.bg-rosado-pastel {
+  background-color: var(--rosado-pastel);
+}
+
+/* Section Titles */
+h1.fw-bold.text-rosado {
+  color: var(--rosado);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 2rem;
+}
+
+/* About image */
+.about-img {
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transition: transform 0.5s ease;
+}
+.about-img:hover {
+  transform: scale(1.05);
+}
+
+/* Valores */
+.values i {
+  color: var(--rosado);
+  margin-right: 0.5rem;
+}
+
+/* Equipo */
+.team-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.team-card:hover .team-img {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(173, 20, 87, 0.5);
+}
+
+/* Footer */
+footer {
+  background-color: #212529;
+  color: #eee;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+footer h2 {
+  color: var(--rosado);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+footer a {
+  color: #eee;
+  font-size: 1.3rem;
+  margin: 0 0.6rem;
+  transition: color 0.3s ease;
+}
+footer a:hover {
+  color: var(--rosado);
+}

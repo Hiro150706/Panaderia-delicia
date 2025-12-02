@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión - Panadería Delicia</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --rosado: #e91e63;
+      --rosado-oscuro: #ad1457;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fff0f4 0%, #ffe4ec 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .login-container {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(233, 30, 99, 0.2);
+      overflow: hidden;
+      max-width: 900px;
+      width: 100%;
+    }
+    
+    .login-left {
+      background: linear-gradient(135deg, var(--rosado) 0%, var(--rosado-oscuro) 100%);
+      color: white;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .login-left h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    .login-left p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    .login-right {
+      padding: 3rem;
+    }
+    
+    .btn-rosado {
+      background-color: var(--rosado);
+      color: white;
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-rosado:hover {
+      background-color: var(--rosado-oscuro);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(233, 30, 99, 0.3);
+    }
+    
+    .form-control:focus {
+      border-color: var(--rosado);
+      box-shadow: 0 0 0 0.2rem rgba(233, 30, 99, 0.25);
+    }
+    
+    .tab-button {
+      background: none;
+      border: none;
+      color: #666;
+      font-weight: 600;
+      padding: 0.5rem 1.5rem;
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .tab-button.active {
+      color: var(--rosado);
+      border-bottom-color: var(--rosado);
+    }
+    
+    .test-accounts {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+    }
+    
+    .test-accounts strong {
+      color: var(--rosado);
+    }
+    
+    @media (max-width: 768px) {
+      .login-left {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row login-container">
+      <!-- Lado izquierdo -->
+      <div class="col-md-5 login-left">
+        <div>
+          <i class="fas fa-bread-slice fa-5x mb-4"></i>
+          <h1>Panadería Delicia</h1>
+          <p>El sabor de lo artesanal en cada mordisco</p>
+        </div>
+      </div>
+      
+      <!-- Lado derecho -->
+      <div class="col-md-7 login-right">
+        <div class="text-center mb-4">
+          <h2>Bienvenido</h2>
+          <div class="mt-3">
+            <button class="tab-button active" id="tab-login">Iniciar Sesión</button>
+            <button class="tab-button" id="tab-register">Registrarse</button>
+          </div>
+        </div>
+        
+        <!-- Formulario de Login -->
+        <div id="form-login">
+          <form id="loginForm">
+            <div class="mb-3">
+              <label class="form-label">
+                <i class="fas fa-envelope"></i> Email
+              </label>
+              <input type="email" id="login-email" class="form-control" required placeholder="tu@email.com">
+            </div>
+            
+            <div class="mb-3">
+              <label class="form-label">
+                <i class="fas fa-lock"></i> Contraseña
+              </label>
+              <input type="password" id="login-password" class="form-control" required placeholder="••••••••">
+            </div>
+            
+            <button type="submit" class="btn btn-rosado w-100">
+              <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+            </button>
+          </form>
+          
+          <!-- Cuentas de prueba -->
+          <div class="test-accounts">
+            <strong>🔑 Cuentas de Prueba:</strong><br>
+            <small>
+              👨‍💼 <strong>Admin:</strong> admin@panadelicia.com / admin123<br>
+              👷 <strong>Empleado:</strong> empleado@panadelicia.com / empleado123<br>
+              👤 <strong>Cliente:</strong> cliente@test.com / cliente123
+            </small>
+          </div>
+        </div>
+        
+        <!-- Formulario de Registro -->
+        <div id="form-register" style="display: none;">
+          <form id="registerForm">
+            <div class="mb-3">
+              <label class="form-label">
+                <i class="fas fa-user"></i> Nombre Completo
+              </label>
+              <input type="text" id="reg-nombre" class="form-control" required placeholder="Juan Pérez">
+            </div>
+            
+            <div class="mb-3">
+              <label class="form-label">
+                <i class="fas fa-envelope"></i> Email
+              </label>
+              <input type="email" id="reg-email" class="form-control" required placeholder="juan@email.com">
+            </div>
+            
+            <div class="mb-3">
+              <label class="form-label">
+                <i class="fas fa-phone"></i> Teléfono (opcional)
+              </label>
+              <input type="tel" id="reg-telefono" class="form-control" placeholder="+51 999 999 999">
+            </div>
+            
+            <div class="mb-3">
+              <label class="form-label">
+                <i class="fas fa-map-marker-alt"></i> Dirección (opcional)
+              </label>
+              <textarea id="reg-direccion" class="form-control" rows="2" placeholder="Calle, distrito, ciudad"></textarea>
+            </div>
+            
+            <div class="mb-3">
+              <label class="form-label">
+                <i class="fas fa-lock"></i> Contraseña
+              </label>
+              <input type="password" id="reg-password" class="form-control" required placeholder="••••••••">
+            </div>
+            
+            <div class="mb-3">
+              <label class="form-label">
+                <i class="fas fa-lock"></i> Confirmar Contraseña
+              </label>
+              <input type="password" id="reg-password2" class="form-control" required placeholder="••••••••">
+            </div>
+            
+            <button type="submit" class="btn btn-rosado w-100">
+              <i class="fas fa-user-plus"></i> Crear Cuenta
+            </button>
+          </form>
+        </div>
+        
+        <div class="text-center mt-3">
+          <a href="index.html" class="text-decoration-none">
+            <i class="fas fa-arrow-left"></i> Volver al inicio
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/auth.js"></script>
+  
+  <script>
+    // Cambiar entre tabs
+    document.getElementById('tab-login').addEventListener('click', () => {
+      document.getElementById('tab-login').classList.add('active');
+      document.getElementById('tab-register').classList.remove('active');
+      document.getElementById('form-login').style.display = 'block';
+      document.getElementById('form-register').style.display = 'none';
+    });
+    
+    document.getElementById('tab-register').addEventListener('click', () => {
+      document.getElementById('tab-register').classList.add('active');
+      document.getElementById('tab-login').classList.remove('active');
+      document.getElementById('form-register').style.display = 'block';
+      document.getElementById('form-login').style.display = 'none';
+    });
+    
+    // Login
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const email = document.getElementById('login-email').value.trim();
+      const password = document.getElementById('login-password').value.trim();
+      
+      try {
+        const session = await auth.login(email, password);
+        alert(`¡Bienvenido ${session.nombre}!`);
+        auth.redirectByRole();
+      } catch (error) {
+        alert('Error: ' + error.message);
+      }
+    });
+    
+    // Registro
+    document.getElementById('registerForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const nombre = document.getElementById('reg-nombre').value.trim();
+      const email = document.getElementById('reg-email').value.trim();
+      const telefono = document.getElementById('reg-telefono').value.trim();
+      const direccion = document.getElementById('reg-direccion').value.trim();
+      const password = document.getElementById('reg-password').value;
+      const password2 = document.getElementById('reg-password2').value;
+      
+      if (password !== password2) {
+        alert('Las contraseñas no coinciden');
+        return;
+      }
+      
+      if (password.length < 6) {
+        alert('La contraseña debe tener al menos 6 caracteres');
+        return;
+      }
+      
+      try {
+        const session = await auth.register(email, password, nombre, telefono, direccion);
+        alert(`¡Cuenta creada exitosamente! Bienvenido ${session.nombre}`);
+        auth.redirectByRole();
+      } catch (error) {
+        alert('Error: ' + error.message);
+      }
+    });
+    
+    // Redirigir si ya hay sesión
+    if (auth.isAuthenticated()) {
+      auth.redirectByRole();
+    }
+  </script>
+</body>
+</html>
